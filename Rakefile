@@ -15,12 +15,12 @@ require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://guides.rubygems.org/specification-reference/ for more options
   gem.name = "webpack-rails"
-  gem.homepage = "http://github.com/StGerman/webpack-rails"
+  gem.homepage = "https://github.com/rambler-digital-solutions/webpack-rails"
   gem.license = "MIT"
   gem.summary = %Q{TODO: one-line summary of your gem}
   gem.description = %Q{TODO: longer description of your gem}
   gem.email = "stas.german@gmail.com"
-  gem.authors = ["Stas German"]
+  gem.authors = ["Stanislav German"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
@@ -40,7 +40,7 @@ end
 require 'roodi'
 require 'roodi_task'
 RoodiTask.new do |t|
-  t.verbose = false
+  t.verbose = true
 end
 
 task :default => :spec
