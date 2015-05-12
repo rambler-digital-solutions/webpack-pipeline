@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib"]
   s.authors = ["Stanislav German"]
-  s.date = "2015-05-08"
+  s.date = "2015-05-12"
   s.description = "TODO: longer description of your gem"
   s.email = "stas.german@gmail.com"
   s.extra_rdoc_files = [
@@ -28,8 +28,13 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "lib/webpack-rails.rb",
+    "lib/webpack/configuration.rb",
+    "lib/webpack/manifest.rb",
+    "lib/webpack/railtie.rb",
+    "lib/webpack/view_helper.rb",
     "spec/spec_helper.rb",
-    "spec/webpack-rails_spec.rb"
+    "spec/webpack-rails_spec.rb",
+    "webpack-rails.gemspec"
   ]
   s.homepage = "https://github.com/rambler-digital-solutions/webpack-rails"
   s.licenses = ["MIT"]
