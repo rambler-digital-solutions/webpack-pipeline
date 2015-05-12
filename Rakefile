@@ -17,9 +17,9 @@ Jeweler::Tasks.new do |gem|
   gem.name = "webpack-rails"
   gem.homepage = "https://github.com/rambler-digital-solutions/webpack-rails"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
-  gem.email = "stas.german@gmail.com"
+  gem.summary = %Q{Webpack to Rails assets integration}
+  gem.description = %Q{it adds wiew helpers to integrate webpack with rails}
+  gem.email = "s.german@rambler-co.ru"
   gem.authors = ["Stanislav German"]
   # dependencies defined in Gemfile
 end
