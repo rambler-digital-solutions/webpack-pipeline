@@ -12,8 +12,8 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.authors = ["Stanislav German"]
   s.date = "2015-05-12"
-  s.description = "TODO: longer description of your gem"
-  s.email = "stas.german@gmail.com"
+  s.description = "it adds wiew helpers to integrate webpack with rails"
+  s.email = "s.german@rambler-co.ru"
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
@@ -39,12 +39,13 @@ Gem::Specification.new do |s|
   s.homepage = "https://github.com/rambler-digital-solutions/webpack-rails"
   s.licenses = ["MIT"]
   s.rubygems_version = "2.4.6"
-  s.summary = "TODO: one-line summary of your gem"
+  s.summary = "Webpack to Rails assets integration"
 
   if s.respond_to? :specification_version then
     s.specification_version = 4
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<activesupport>, [">= 2.3.5"])
       s.add_development_dependency(%q<rspec>, ["~> 2.8.0"])
       s.add_development_dependency(%q<rdoc>, ["~> 3.12"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0"])
@@ -52,6 +53,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<simplecov>, [">= 0"])
       s.add_development_dependency(%q<roodi>, ["~> 2.1.0"])
     else
+      s.add_dependency(%q<activesupport>, [">= 2.3.5"])
       s.add_dependency(%q<rspec>, ["~> 2.8.0"])
       s.add_dependency(%q<rdoc>, ["~> 3.12"])
       s.add_dependency(%q<bundler>, ["~> 1.0"])
@@ -60,6 +62,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<roodi>, ["~> 2.1.0"])
     end
   else
+    s.add_dependency(%q<activesupport>, [">= 2.3.5"])
     s.add_dependency(%q<rspec>, ["~> 2.8.0"])
     s.add_dependency(%q<rdoc>, ["~> 3.12"])
     s.add_dependency(%q<bundler>, ["~> 1.0"])
