@@ -14,10 +14,10 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://guides.rubygems.org/specification-reference/ for more options
-  gem.name = "webpack-rails"
+  gem.name = "webpack-pipeline"
   gem.homepage = "https://github.com/rambler-digital-solutions/webpack-rails"
   gem.license = "MIT"
-  gem.summary = %Q{Webpack to Rails assets integration}
+  gem.summary = %Q{Webpack to Rails integration}
   gem.description = %Q{it adds wiew helpers to integrate webpack with rails}
   gem.email = "s.german@rambler-co.ru"
   gem.authors = ["Stanislav German"]
