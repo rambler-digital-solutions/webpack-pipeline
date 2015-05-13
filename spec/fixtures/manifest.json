@@ -1,0 +1,10 @@
+{
+  "publicPath": "/assets/",
+  "assetsByChunkName": {
+    "test": [
+      "ea0d453146be2145f180.application.js",
+      "ea0d453146be2145f180.application.css"
+    ]
+  },
+  "assets": {}
+}

@@ -8,29 +8,19 @@ module Webpack
       @configuration ||= Configuration.new
     end
 
-    class << self
-      def configure
-        yield configuration
-      end
+    def self.configure
+      yield configuration
     end
 
-    def javascripts
-      @javascript = find_asset { |file_name| file_name.ends_with? 'js' }
-    end
+    def asset_url(filename)
+      name = filename.split('.').first
+      ext  = filename.split('.').last
+      chunk = [*data['assetsByChunkName'][name]]
 
-    def stylesheets
-      @stylesheets = find_asset { |file_name| file_name.ends_with? 'css' }
-    end
-
-    def find_asset(&block)
-      chunks.inject({}) do |hash, chunk|
-        filenames = [*data['assetsByChunkName'][chunk]]
-        if finded = filenames.find(&block)
-          hash.merge chunk => "#{host}#{finded}".strip
-        else
-          hash
-        end
-      end
+      asset_name = chunk.find { |asset|
+        asset.end_with? ext
+      }
+      "#{host}#{asset_name}" if asset_name
     end
 
     def host

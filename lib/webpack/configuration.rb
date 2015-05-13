@@ -3,7 +3,7 @@ module Webpack
     include ActiveSupport::Configurable
 
     config_accessor(:path) {
-      Rails.root.join('public', 'assets', 'manifest.json')
+      File.join('public', 'assets', 'manifest.json')
     }
   end
 end
