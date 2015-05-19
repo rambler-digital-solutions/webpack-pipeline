@@ -3,7 +3,7 @@ require 'webpack/configuration'
 module Webpack
   class Manifest
     include Singleton
-    attr_reader :updated_at
+
     cattr_reader :configuration do
       @configuration ||= Configuration.new
     end
@@ -12,14 +12,8 @@ module Webpack
       yield configuration
     end
 
-    def asset_url(filename)
-      name = filename.split('.').first
-      ext  = filename.split('.').last
-      chunk = [*data['assetsByChunkName'][name]]
-
-      asset_name = chunk.find { |asset|
-        asset.end_with? ext
-      }
+    def asset_url(source)
+      asset_name = asset_in_chunks(source) || asset_images(source)
       "#{host}#{asset_name}" if asset_name
     end
 
@@ -29,18 +23,23 @@ module Webpack
 
     protected
 
-    def data
-      new_timestamp = File.ctime(configuration.path)
-      if new_timestamp == @updated_at
-        @data
-      else
-        @updated_at = new_timestamp
-        @data = JSON.parse(File.read(configuration.path))
-      end
+    def asset_in_chunks(source)
+      name = source.split('.').first
+      ext  = source.split('.').last
+      chunk = [*data['assetsByChunkName'][name]]
+
+      chunk.find { |asset| asset.end_with? ext }
     end
 
-    def chunks
-      @chunks ||= data['assetsByChunkName'].map(&:first)
+    def asset_images(source)
+      data['assets'][source]
+    end
+
+    def data
+      new_timestamp = File.ctime(configuration.path)
+      return @data if new_timestamp == @updated_at
+      @updated_at = new_timestamp
+      @data = JSON.parse(File.read(configuration.path))
     end
   end
 end

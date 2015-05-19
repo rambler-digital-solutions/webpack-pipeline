@@ -1,7 +1,9 @@
+
 module Webpack
   class Railtie < Rails::Railtie
     initializer 'load manifest class' do
       ActiveSupport.on_load :action_view do
+        require 'webpack/manifest'
         require 'webpack/asset_url_helper'
         include AssetUrlHelper
       end
