@@ -4,7 +4,7 @@ module Webpack
 
     included do
       def compute_asset_path(source, options = {})
-        webpack.asset_url(source) || fail(ArgumentError, "can't find #{source}")
+        webpack.asset_url(source) || super
       end
 
       protected

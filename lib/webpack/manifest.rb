@@ -13,6 +13,8 @@ module Webpack
     end
 
     def asset_url(source)
+      return unless manifest_found?
+
       asset_name = asset_in_chunks(source) || asset_images(source)
       "#{host}#{asset_name}" if asset_name
     end
@@ -40,6 +42,10 @@ module Webpack
       return @data if new_timestamp == @updated_at
       @updated_at = new_timestamp
       @data = JSON.parse(File.read(configuration.path))
+    end
+
+    def manifest_found?
+      File.exist? configuration.path
     end
   end
 end
