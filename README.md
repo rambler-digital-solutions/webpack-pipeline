@@ -6,7 +6,7 @@ Webpack-pipeline allows to use default Rails helpers (`image_tag`, `javascript_i
 
 Webpack should generate `manifest.json` file with paths to compiled assets in [specified format](#manifest-file-format).
 
-Для этого вам нужно создать вебпаком файл manifest.json с описанием путей до собранных ассетов в формате этого гема.
+By default webpack-pipeline looking for `config/manifest.json`, but it path may be specified through [configuration](#configuration).
 
 ## Installation
 
