@@ -56,4 +56,15 @@ end
     "favicon-195x195.png":"images/favicons/78f6baa138752eaba9e201a3f53e3c3b.favicon-195x195.png"
   }
 }
+
 ```
+
+## Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/rambler-digital-solutions/webpack-pipeline.
+This project is intended to be a safe, welcoming space for collaboration, and contributors are expected
+to adhere to the Contributor Covenant code of conduct.
+
+## License
+
+The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
